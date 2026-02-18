@@ -30,7 +30,7 @@ while True:
         itr += 1
         num = sum
 
-        print(f"Iterations: {itr}, Final digit: {num}")
+    print(f"Iterations: {itr}, Final digit: {num}")
 
 print(f"Total numbers processed: {count}")     
 

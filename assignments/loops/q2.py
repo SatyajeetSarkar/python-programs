@@ -11,7 +11,6 @@ the first. If fewer than two multiples, you might print none or just the later o
 n = int(input("Enter numbers of terms: "))
 k = int(input("Enter the divisor: "))
 
-# Initializing empty list
 result = ""
 count = 1
 

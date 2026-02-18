@@ -16,7 +16,7 @@ for i in sales:
 
 max_sales = totals[0]
 max_prod_no = 1
-min_sales = totals[0]
+min_sales = totals[0]   
 min_prod_no = 1
 
 for i in range(len(totals)):

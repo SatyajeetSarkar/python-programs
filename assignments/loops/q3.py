@@ -17,14 +17,18 @@ n = int(input("Enter numbers of terms: "))
 expect_even= True
 # New empty list
 result = ""
+i = 0
 
-for i in range(1, n+1):
-    if expect_even and i%2 == 0:
-        result = result + " " + str(i)
+while i<n:
+    val = int(input("Enter value: "))
+    if expect_even and val%2 == 0:
+        result = result + " " + str(val)
         expect_even = False
 
-    elif not expect_even and i%2!=0:
-        result = result + " " + str(i)
+    elif not expect_even and val%2!=0:
+        result = result + " " + str(val)
         expect_even = True
+
+    i += 1
 
 print(result)
