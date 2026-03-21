@@ -1,11 +1,11 @@
 ''' “Digit-Extractor and Digit-Stats from Mixed String” '''
 
-str = "abcc22cdd"
+str = "abcc23cdd"
 
 sum = 0
 count = 0
 max_digit = 0
-min_digit = 0
+min_digit = 10
 
 for s in str:
     if 48 <= ord(s) <= 57:
