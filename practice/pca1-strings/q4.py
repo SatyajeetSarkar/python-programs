@@ -8,7 +8,7 @@ count = 0
 
 for i in str:
     if i == ' ':
-        pass
+        continue
     else:
         count += 1
 

@@ -6,9 +6,9 @@ letter_flag = 0
 number_flag = 0
 
 for ch in str:
-    if 65 <= ord(ch) <= 90 or 97 <= ord(ch) <= 122:
+    if 'A' <= ch <= 'Z' or 'a' <= ch <= 'z':
         letter_flag = 1
-    elif 48 <= ord(ch) <= 57:
+    elif 0 <= ord(ch)-1 <= 9:
         number_flag = 1
 
 if letter_flag and number_flag:
