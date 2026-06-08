@@ -7,7 +7,7 @@ class stack:
         self.MAX = len(self.stack)
 
     def push(self, item):
-        if self.stack == self.MAX - 1:
+        if self.top == self.MAX - 1:
             print("Stack overflow")
             return
         
@@ -15,18 +15,22 @@ class stack:
         self.stack[self.top] = item
 
     def pop(self):
-        if self.stack == - 1:
+        if self.top == - 1:
             print("Stack underflow")
             return
         
         self.top -= 1
 
     def peek(self):
+        if self.top == - 1:
+            print("Stack underflow")
+            return
+        
         print(self.stack[self.top])
 
 s1 = stack()
-s1.push(5)
-s1.push(10)
+# s1.push(5)
+# s1.push(10)
 s1.peek()
 s1.pop()
 s1.peek()
