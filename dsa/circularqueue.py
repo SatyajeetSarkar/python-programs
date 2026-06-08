@@ -38,13 +38,28 @@ class circular_queue:
     
     # Queue Peek
     def peek(self):
-        if len(self.queue) == 0:
+        if self.front == -1:
             print("Queue is empty")
             return
-        print(self.queue[0])
+
+        print(self.queue[self.front])
 
     def display(self):
-        print(self.queue)
+        if self.front == -1:
+            print("Queue is empty")
+            return
+
+        i = self.front
+
+        while True:
+            print(self.queue[i], end=" ")
+
+            if i == self.rear:
+                break
+
+            i = (i + 1) % self.MAX
+
+        print()
 
 q1 = circular_queue()
 q1.enque(10)
