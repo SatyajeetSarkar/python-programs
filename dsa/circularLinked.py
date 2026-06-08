@@ -9,6 +9,7 @@ class linked_list:
     def __init__(self):
         self.start = None
 
+    # Insert at start
     def insert_at_start(self, item):
         nd = node(item)
 
@@ -25,6 +26,7 @@ class linked_list:
         temp.next = nd
         self.start = nd
 
+    # Delete at start
     def delete_at_start(self):
         if self.start is None:
             print("No item found")
@@ -37,7 +39,81 @@ class linked_list:
         temp.next = self.start.next
         self.start = self.start.next
 
+    # Delete at the end
+    def delete_at_end(self):
+        if self.start is None:
+            print("No item found")
+            return
 
+        if self.start.next == self.start:
+            self.start = None
+            return
+
+        prev = None
+        temp = self.start
+
+        while temp.next != self.start:
+            prev = temp
+            temp = temp.next
+
+        prev.next = self.start
+
+    # Delete at specific position
+    def delete_at_position(self, pos):
+        if self.start is None:
+            print("No item found")
+            return
+
+        if pos == 1:
+            self.delete_at_start()
+            return
+
+        prev = None
+        temp = self.start
+        count = 1
+
+        while count < pos and temp.next != self.start:
+            prev = temp
+            temp = temp.next
+            count += 1
+
+        if count != pos:
+            print("Invalid Position")
+            return
+
+        prev.next = temp.next
+
+    # Insert after specific item
+    def delete_after_item(self, item):
+        if self.start is None:
+            print("No item found")
+            return
+
+        temp = self.start
+
+        while True:
+            if temp.info == item:
+                if temp.next == self.start and temp == self.start:
+                    print("No node after item")
+                    return
+
+                delete_node = temp.next
+
+                if delete_node == self.start:
+                    self.delete_at_start()
+                else:
+                    temp.next = delete_node.next
+
+                return
+
+            temp = temp.next
+
+            if temp == self.start:
+                break
+
+        print("Item not found")
+
+    # Insert at last
     def insert_at_last(self, item):
         nd = node(item)
 
@@ -53,6 +129,7 @@ class linked_list:
         temp.next = nd
         nd.next = self.start
 
+    # Insert at specific position
     def insert_at_position(self, item, pos):
         if pos == 1:
             self.insert_at_start(item)
@@ -69,6 +146,7 @@ class linked_list:
             nd.next = temp.next
             temp.next = nd
 
+    # Insert after a specific item
     def insert_after_item(self, item, s_item):
         nd = node(item)
         temp = self.start
