@@ -124,19 +124,46 @@ class BST:
                 succ_par.right = succ.right
 
     # Inorder Traversal
-    def inorder(self, root):
+    def inorder_traversal(self, root=None):
+        if root is None:
+            root = self.root
+
         if root:
-            self.inorder(root.left)
+            if root.left:
+                self.inorder_traversal(root.left)
+
             print(root.info, end=" ")
-            self.inorder(root.right)
 
-    def display(self):
-        if self.root is None:
-            print("No item found!!")
-            return
+            if root.right:
+                self.inorder_traversal(root.right)
 
-        self.inorder(self.root)
-        print()
+    # Pre order trvaersal
+    def preorder_traversal(self, root=None):
+        if root is None:
+            root = self.root
+
+        if root:
+            print(root.info, end=" ")
+
+            if root.left:
+                self.preorder_traversal(root.left)
+
+            if root.right:
+                self.preorder_traversal(root.right)
+
+    # Post order traversal
+    def postorder_traversal(self, root=None):
+        if root is None:
+            root = self.root
+
+        if root:
+            if root.left:
+                self.postorder_traversal(root.left)
+
+            if root.right:
+                self.postorder_traversal(root.right)
+
+            return root.info
 
 
 bst = BST()
@@ -151,8 +178,12 @@ bst.insert_node(80)
 
 bst.search(40)
 
-bst.display()
+bst.inorder_traversal()
+bst.postorder_traversal()
+bst.preorder_traversal()
 
 bst.delete(50)
 
-bst.display()
+bst.inorder_traversal()
+bst.postorder_traversal()
+bst.preorder_traversal()
